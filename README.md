@@ -2,5 +2,13 @@ The original source code is https://github.com/eic/EICrecon/tree/dirc_angleres/s
 
 ```bash
     #run reconstruction
-    eicrecon  -Pjana:nevents=${NEVE} -Pplugins=pid_angleres -Pdd4hep:xml_files=${XMLPATH}/${XMLFILE} -Phistsfile=${OUTDIR}/rootfiles/eicrecon_${EICVER}_${EPICVER}_${PART}_${MOM}GeV_${THMIN}deg_${THMAX}deg.ana.root -Ppodio:output_file=${OUTDIR}/rootfiles/eicrecon_${EICVER}_${EPICVER}_${PART}_${MOM}GeV_${THMIN}deg_${THMAX}deg.podio.root ${INDIR}/npsim_${EPICVER}_${PART}_${MOM}GeV_${THMIN}deg_${THMAX}deg_1.edm4eic.root >> ${OUTDIR}/logs/eicrecon_${EPICVER}_${EPICVER}_${PART}_${MOM}GeV_${THMIN}deg_${THMAX}deg.out
+    eicrecon \
+      -Pplugins=pid_angleres \
+      -PPidAngleRes:csv=${csv_out} \
+      -PPidAngleRes:p=${p} \
+      -PPidAngleRes:thetaL=${th_min} \
+      -PPidAngleRes:thetaH=${th_max} \
+      -Ppodio:output_file=${podio_out} \
+      -Phistsfile=${hist_out} \
+      "${in_root}"
 ```
