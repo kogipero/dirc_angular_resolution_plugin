@@ -1,0 +1,19 @@
+# Build artifacts
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Compiled objects / libs
+*.o
+*.so
+*.a
+*.d
+
+# Qt / IDE / misc
+.qt/
+*.user
+*.swp
+.DS_Store
+EOF
